@@ -1,0 +1,7 @@
+"""Constants"""
+
+DEFAULT_LIST_GITHUB_ENDPOINT = "/repositories"
+BASE_GITHUB_ENDPOINT = "https://api.github.com"
+
+FIRST_BOUNDARY = 81000000
+SECOND_BOUNDARY = 90000000
