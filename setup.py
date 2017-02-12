@@ -15,7 +15,7 @@ class RunTests(Command):
         print "ghtool test invoked..."
 
     def finalize_options(self):
-        print "ghtool test finished."
+        print "ghtool test is about to start..."
 
     def run(self):
         errno = call(['py.test', '--cov=ghtool', '--cov-report=term-missing'])
@@ -26,7 +26,7 @@ setup(
     name='ghtool',
     version=__version__,
     description='A gihub CLI in python',
-    url='https://github.com/filip/ghtool',
+    url='https://github.com/skynet2507/ghtool.git',
     author='Filip Tomic',
     author_email='skynet.ft@hotmail.com',
     license='UNLICENSE',
