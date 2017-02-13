@@ -24,7 +24,8 @@ class TestUserAuthentication(TestCase):
             result = json.loads(output)
             self.assertTrue(len(result['repositories']) == 10)
         except ValueError:
-            self.assertTrue("API rate limit problem" in output)
+            print output
+            self.assertTrue("API rate limit" in output)
 
     def test_first_item_python_repos(self):
         output = popen(['ghtool', 'list', 'python'], stdout=PIPE).communicate()[0]
@@ -32,7 +33,7 @@ class TestUserAuthentication(TestCase):
             result = json.loads(output)
             self.assertTrue(result['repositories'][0]['language'], "Python")
         except ValueError:
-            self.assertTrue("API rate limit problem" in output)
+            self.assertTrue("API rate limit" in output)
 
     def test_description(self):
         output = popen(['ghtool', 'desc'], stdout=PIPE).communicate()[0]
